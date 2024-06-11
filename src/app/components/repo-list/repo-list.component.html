@@ -1,0 +1,63 @@
+<div *ngIf="repoList.length > 0" class="mt-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      *ngFor="
+        let repo of repoList
+          | paginate
+            : {
+                itemsPerPage: itemsPerPage,
+                currentPage: page,
+                totalItems: totalItems
+              }
+      "
+      class="p-4 border rounded-lg shadow-lg"
+    >
+      <div class="cursor-pointer" (click)="navigateToProfile(repo)">
+        <h3 class="mb-2 text-xl font-bold">{{ repo.name }}</h3>
+        <p class="mb-2">{{ repo.description }}</p>
+        <div class="flex flex-wrap">
+          <span
+            *ngFor="let topic of repo.topics"
+            class="px-2 py-1 m-1 text-sm text-blue-700 bg-blue-200 rounded-full"
+          >
+            {{ topic }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="repoList.length > 0"
+    class="flex items-center justify-around py-5 mt-8"
+  >
+    <div class="mt-4">
+      <label for="pageSize" class="mr-2">Repositories per page:</label>
+      <select
+        id="pageSize"
+        [(ngModel)]="itemsPerPage"
+        (change)="changePageSize($event)"
+        class="px-2 py-1 border rounded border-[#2199e8]"
+      >
+        <option
+          class="bg-[#f8f8f8]"
+          *ngFor="let size of pageSizes"
+          [value]="size"
+        >
+          {{ size }}
+        </option>
+      </select>
+    </div>
+
+    <div class="flex items-center justify-center py-5 mt-8">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+
+  <div
+    *ngIf="repoList.length === 0 && !loading && repoListInitialized"
+    class="mt-4 text-center"
+  >
+    <p>No repositories found.</p>
+  </div>
+</div>

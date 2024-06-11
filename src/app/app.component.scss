@@ -1,0 +1,55 @@
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .search-bar-container {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 2rem;
+  
+//   &.loaded {
+//     justify-content: flex-end;
+//   }
+// }
+
+// .search-bar {
+//   display: flex;
+//   align-items: center;
+//   transition: all 0.3s ease;
+// }
+
+// .user-profile {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 2rem;
+// }
+
+// .profile-pic {
+//   width: 100px;
+//   height: 200px;
+//   -o-transition: width 0.3s ease, height 0.3s ease;
+//   -webkit-transition: width 0.3s ease, height 0.3s ease;
+//   -moz-transition: width 0.3s ease, height 0.3s ease;
+//   -ms-transition: width 0.3s ease, height 0.3s ease;
+//   transition: width 0.3s ease, height 0.3s ease;
+// }
+
+// .search-bar-container.loaded .profile-pic {
+//   width: 128px;
+//   height: 128px;
+// }
+
+// @media (min-width: 768px) {
+//   .profile-pic {
+//     width: 300px;
+//     height: 300px;
+//   }
+
+//   .search-bar-container.loaded .profile-pic {
+//     width: 192px;
+//     height: 192px;
+//   }
+// }
