@@ -31,7 +31,7 @@ You will hear back within 48 hours from us via email.
 
 ### Install requirements
 * Install angular cli [Ref](https://angular.io/cli)
-* `npm install` in this repository 
+* `npm install --legacy-peer-deps` in this repository 
 
 ## Development server
 
